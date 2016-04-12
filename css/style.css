@@ -1,0 +1,16 @@
+body{
+	background-color:light-grey;
+	margin:0 auto;
+	font-family: serif;
+}
+a{
+	text-decoration: none;
+	text-decoration-color: red;
+}
+
+a.hover{
+	background-color: pink;
+}
+.block{
+	margin: 0 auto;
+}
