@@ -1,3 +1,7 @@
+body{
+	font-family: helvetica;
+}
+
 .left{
 	background-color: aquamarine;
 	position:fixed;
@@ -5,6 +9,11 @@
 	height:100%;
 	top:0;
 	left:0;
+}
+
+.interface{
+	text-align: center;
+	padding: 20px;
 }
 
 .right{
@@ -17,27 +26,72 @@
 }
 
 .ground{
-	background-color:green;
-	position:absolute;
-	bottom: 0;
+	background: url('../img/ground.png') no-repeat 0 0;
+	position:absolute;	
+	bottom: -140px;
 	left: 0;
 	width: 100%;
-	height:20px;
+	height:200px;
+}
+
+.nervous{
+	position: absolute;
+	top: 450px;
+	left: 200px;
+	background: url('../img/nervous.png') no-repeat 0 0;
+	width:98px;
+	height:34px;
+	display:none;
+}
+.blowup{
+	position: absolute;
+	bottom: 120px;
+	left: 50%;
+	background: url('../img/excited.png') no-repeat 0 0;
+	width:107px;
+	height:56px;
+	margin-left: 50px;
+	display:none;
+}
+
+.nervous.show{
+	display:block;
+}
+
+.blowup.show{
+	display:block;
 }
 
 .rocket{
 	position: absolute;
 	left: 50%;
-	bottom:20px;
-	width:20px;
-	height: 100px;
-	background-color:blue;
+	bottom:-33px;
+	width:134px;
+	height: 273px;
+	margin-left:-67px;
+	background:url('../img/rocket-state1.png') 
+		no-repeat 0 0;
 	transition:bottom 10000ms;
 }	
+
+/* rocket bg image*/
+body.body-state2 .rocket{
+	background-image: url('../img/rocket-state2.png');
+}
+body.body-state3 .rocket,
+body.body-state4 .rocket{
+	background-image: url('../img/rocket-state3.png');
+	
+}
+body.body-state5 .rocket{
+	background-image: url('../img/explode.png');
+	width:133px;
+	height:206px;
+	margin-left:-67px;
+}
 body.body-state1 .rocket{
 	transition:none;
 }
-
 body.body-state3 .rocket,
 body.body-state4 .rocket{
 	bottom: 1000px;
@@ -62,5 +116,17 @@ a{
 }
 
 a.button{
+	display:inline-block;
+	background-color: white;
+	color:black;
+	padding:20px 40px;
+	text-transform: uppercase;
+	text-decoration: none;
+	shape-margin: round;
+	border-radius: 10px;
+	transition: color 300ms;
+}
 
+a:hover{
+	color: red;
 }
